@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import Chat from "../components/Chat";
 
 const bg =
