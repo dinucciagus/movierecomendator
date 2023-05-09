@@ -12,7 +12,7 @@ export default function Github() {
         data-te-ripple-init
         data-te-ripple-color="light"
         className={
-          "mb-2 hover:bg-pink1 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal  hover:text-white hover:shadow-md  duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg "
+          "mb-2 hover:bg-lightred hover:text-richblack bg-opacity-80 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal   hover:shadow-md  duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg "
         }
       >
         <svg
