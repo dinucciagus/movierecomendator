@@ -95,7 +95,7 @@ const Chat = () => {
         className="w-24 h-24 lg:h-32 lg:w-32"
       />
       <h1 className="w-full py-4 font-sans text-xl font-bold text-center lg:text-3xl text-richblack">
-        Let&apos;s talk a little and I will recommend you a movie to watch!
+        Lets talk a little and I will recommend you a movie to watch!
       </h1>
       <div className="flex flex-col w-full h-screen overflow-hidden shadow-md rounded-2xl drop-shadow shadow-richblack">
         <div
