@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-pattern":
+          "url('https://drive.google.com/uc?export=download&id=1BvBWtyAhqAKEnQBjdKAwMDYYQae0XYte')",
+      },
       animation: {
         // Bounces 5 times 1s equals 2 seconds
         "pulse-short": "pulse 1s ease-in-out 2",
