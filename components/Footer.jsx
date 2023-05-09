@@ -1,5 +1,5 @@
 import React from "react";
-import Linkedin from "./LinkedIn";
+import Linkedin from "./Linkedin";
 import Github from "./Github";
 const avatar =
   "https://drive.google.com/uc?export=download&id=195dq_KdbmkLrYRlfVVICuVKwuYtzf-Ig";
