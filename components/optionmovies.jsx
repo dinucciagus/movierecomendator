@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-
-const Optionmovies = ({ bot, message, length, index }) => {
+import parseMovieOptions from "@/utils/parsemovieopt";
+const Optionmovies = ({ bot, message }) => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -9,29 +9,9 @@ const Optionmovies = ({ bot, message, length, index }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  function parseMovieOptions(content) {
-    const rows = content.split("\n").slice(4, 6);
-    const movies = rows.map((row) => {
-      const columns = row.split("|").slice(1, -1);
-      const image = "http" + columns[4].trim().split("http")[1];
-      console.log(image);
-
-      return {
-        name: columns[0].trim(),
-        description: columns[1].trim(),
-        duration: columns[2].trim(),
-        language: columns[3].trim(),
-        imageLink: image,
-      };
-    });
-    return movies;
-  }
   const movies = parseMovieOptions(message.content);
   return (
-    <div
-      // ref={index === length ? lastMessageRef : null}
-      className="flex items-center justify-center p-4 font-semibold shadow-sm rounded-2xl bg-red bg-opacity-20 drop-shadow shadow-grayblue "
-    >
+    <div className="flex items-center justify-center p-4 font-semibold shadow-sm rounded-2xl bg-red bg-opacity-20 drop-shadow shadow-grayblue ">
       {width > 600 ? (
         <div>
           <img src={bot} className="w-12 h-12 mr-2 rounded-full" />
@@ -44,7 +24,7 @@ const Optionmovies = ({ bot, message, length, index }) => {
                   <th className="px-2">Description</th>
                   <th className="px-2">Duration</th>
                   <th className="px-2">Language</th>
-                  <th className="px-2">Image</th>
+                  {/* <th className="px-2">Image</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -54,14 +34,14 @@ const Optionmovies = ({ bot, message, length, index }) => {
                     <td className="p-2 px-4">{movie.description}</td>
                     <td className="p-2">{movie.duration}</td>
                     <td className="p-2">{movie.language}</td>
-                    <td>
+                    {/* <td>
                       <img
                         src={movie.imageLink}
                         alt={movie.name}
                         height={100}
                         width={100}
                       />
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>
@@ -81,14 +61,6 @@ const Optionmovies = ({ bot, message, length, index }) => {
                   <p className="p-2 px-4">description: {movie.description}</p>
                   <p className="p-2">duration: {movie.duration}</p>
                   <p className="p-2">language: {movie.language}</p>
-                  {/* <div>
-                    <img
-                      src={movie.imageLink}
-                      alt={movie.name}
-                      height={100}
-                      width={100}
-                    />
-                  </div> */}
                   <hr />
                 </div>
               ))}
